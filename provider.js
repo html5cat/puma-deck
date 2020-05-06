@@ -19,10 +19,10 @@ export default (props) => {
         }}
       >
         Use ← → or swipe to navigate. By{" "}
-        <a href="https://twitter.com/rauchg" target="_blank">
-          @rauchg
+        <a href="https://twitter.com/html5cat" target="_blank">
+          @html5cat
         </a>{" "}
-        <a href="https://github.com/rauchg/berkshire-deck-demo" target="_blank">
+        <a href="https://github.com/html5cat/puma-deck" target="_blank">
           (source)
         </a>
       </div>

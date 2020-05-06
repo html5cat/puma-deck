@@ -1,42 +1,333 @@
-import berkshire from 'mdx-deck-theme-berkshire'
+import { Head, Image, Notes, Appear, Embed } from 'mdx-deck'
+import { book } from 'mdx-deck/themes'
 import Provider from './provider'
-export const theme = { ...berkshire, Provider };
+export const theme = { ...book, Provider };
 
-# Never bet against America
+# The State of the Web&nbsp;Monetization Ecosystem
 
----
+👨🏻‍💻
 
-# This is a great slide style
-
----
-
-# Simple and effective
+### Ready Layer One, 2020
 
 ---
 
-# Powered by mdx-deck. Run
+# whoami
+
+### Yuriy Dybskiy
+
+### founder of Puma Browser
+
+### [@html5cat](https://twitter.com/html5cat) on Twitter
+
+### [yuriy@pumabrowser.com]()
+
+### 🇨🇦 🇺🇦 🎾 🏍
+
+---
+
+## My :koala:-ifications
+
+<Appear>
+
+### * hand-coded html and css before it was cool
+
+### * first Bitcoin in 2012
+
+### * worked at Meteor, Parse, Cloudant and others
+
+### * back in crypto in 2018
+
+</Appear>
+
+---
+
+<Split>
+
+# Agenda
+
+### 1. Why Web Monetization?
+### 2. Interledger Protocol
+### 3. Web Monetization Open Spec
+### 4. Demo, Q & A
+
+
+</Split>
+
+---
+
+<Invert>
+
+# Why Web Monetization?
+
+</Invert>
+
+---
+
+# 1. Web never had
+# a built-in payment model
+
+---
+
+# 402
+
+<Appear>
+
+### Payment Required
+
+### "Reserved for future use."
+
+</Appear>
+
+---
+
+import i from './assets/402-cat.jpg';
+
+<Image src={i} size='contain' />
+
+---
+
+# 2. Main business model today:
+
+<Appear>
+
+# *advertising*
+
+</Appear>
+
+---
+
+# Side effects
+
+<Appear>
+
+## * tracking
+## * no privacy
+
+</Appear>
+
+---
+
+## We need a better option
+
+---
+
+# 3. Browsers stopped exploring as much
+
+<Notes>
+
+Internet Explorer joke
+
+</Notes>
+
+---
+
+Desktop Browser Market Share Worldwide 🌏 🖥
+
+import desktop from './assets/StatCounter-desktop-browser-ww-monthly-201405-201905.png';
+
+<Image src={desktop} size='contain' />
+
+---
+
+Mobile Browser Market Share Worldwide 🌏 📱
+
+import mobile from './assets/StatCounter-browser-ww-monthly-201405-201905.png';
+
+<Image src={mobile} size='contain' />
+
+---
+
+Mobile Browser Market Share USA 🇺🇸 📱
+
+import ius from './assets/StatCounter-browser-US-monthly-201405-201905.png';
+
+<Image src={ius} size='contain' />
+
+---
+
+Mobile Browser Market Share 日本 🇯🇵 📱
+
+import ijp from './assets/StatCounter-browser-JP-monthly-201405-201905.png';
+
+<Image src={ijp} size='contain' />
+
+---
+
+# No new approaches
+
+<Appear>
+
+## until Brave & BAT in 2015
+
+</Appear>
+
+---
+
+## In the meantime
+
+<Appear>
+
+# Paywalls!
+
+</Appear>
+
+---
+
+# What can we do?
+
+---
+
+# People + Technology
+
+Mostly people
+
+---
+
+<Invert>
+
+# 2. Interledger Protocol
+
+</Invert>
+
+---
+
+import ilp from './assets/ilp_logo.svg';
+
+<Image src={ilp} size='500px' />
+
+---
+
+## [Interledger.org](https://interledger.org/) (ILP)
+## an open protocol for sending payments
+## across different ledgers.
+
+---
+
+### Created by
+## Stefan Thomas & Evan Schwartz
+
+Whitepaper: [A Protocol for Interledger Payments](https://interledger.org/interledger.pdf) (2015)
+
+---
+
+# Inspired by design of the internet
+
+---
+
+## **Internet** Protocol: Key Features
+
+1. Open Standard
+2. Connects Networks
+3. Use Case Agnostic
+4. Packetized **Data**
+
+---
+
+## **Interledger** Protocol: Key Features
+1. Open Standard
+2. Connects Networks
+3. Use Case Agnostic
+4. Packetized **Money**
+
+---
+
+# Visa
+
+### Average Transaction Size:
+
+<Appear>
+
+# $80
+
+</Appear>
+
+---
+
+# Interledger
+
+### Average Transaction Size:
+
+<Appear>
+
+# $0.00001
+
+</Appear>
+
+---
+
+## Implemented in JavaScript and Rust
+
+* https://github.com/interledgerjs
+* https://interledger.rs (or http://ilp.rs)
+
+
+---
+
+<Invert>
+
+# 3. Web Monetization Spec
+
+</Invert>
+
+---
+
+
+# [Web Monetization Spec](https://interledger.org/rfcs/0028-web-monetization/)
+## * proposed browser API
+## * that uses Interledger micropayments
+## * to monetize a site
+
+---
+
+# Payment Pointer
+
+```html
+<meta name="monetization"
+      content="$twitter.xrptipbot.com/html5cat"/>
+```
+
+---
+
+# JavaScript API
+
+```JavaScript
+document.monetization: EventTarget
+document.monetization.state: String
+```
+
+state can be 'stopped' | 'pending' | 'started'
+
+<Notes>
+
+These events are dispatched on document.monetization. Web Monetization events MAY be implemented as CustomEvents, or as their own Event class.
+
+</Notes>
+
+---
+
+# Browser Events
 
 ```
-yarn add mdx-deck@3 mdx-deck-theme-berkshire
+monetizationpending
+monetizationstart
+monetizationstop
+monetizationprogress
+
 ```
+---
+
+# Demo time
 
 ---
 
-# Then your `deck.mdx`:
+# What can you do?
 
-```
-import berkshire from 'mdx-deck-theme-berkshire'
-export const theme = berkshire;
+<Appear>
 
-# Never bet against America
----
-# My next slide
-## Sub-heading with [link](https://vercel.com)
-```
+## 1. Web Monetize your site (https://webmonetization.org/)
 
----
+## 2. Play around with Puma Browser (https://www.pumabrowser.com/)
 
-# Then deploy!
-1. [Import your repo](https://vercel.com/import) to [Vercel](https://vercel.com)
-2. Run `git push`
-3. You are live: `https://berkshire-mdx-deck.now.sh`
+## 3. Tweet at me: [@html5cat](https://twitter.com/html5cat)
+
+</Appear>

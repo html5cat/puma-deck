@@ -7833,12 +7833,12 @@ mdurl@^1.0.0:
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
 
-mdx-deck-theme-berkshire@1.0.2:
+mdx-deck-theme-berkshire@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/mdx-deck-theme-berkshire/-/mdx-deck-theme-berkshire-1.0.2.tgz#3aa8cc9b1ca7f6a68f710028be8dc33ac60911ed"
   integrity sha512-4K5eJydzuzNIqqrWhGFcutWpQlLW8lhyVEfsgGfdrBPQS+lzsl4ceWAS21T59XDOmG5jjiOlaOvQ8LmX61lIQQ==
 
-mdx-deck@3.1.0:
+mdx-deck@3:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/mdx-deck/-/mdx-deck-3.1.0.tgz#fd6d5a915f0c87ae4d35db96ec7e8bff39779644"
   integrity sha512-6S/Q64ovAXZIhs2b4sEHa31PqsyexJs2LRqRhZLBO9aRaKfVuvoEvmjd2ol6XfWQA1AJjEsiFNVe5/ogezW4zQ==
